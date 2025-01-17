@@ -28,7 +28,7 @@
             margin: 0;
             background-color: rgb(86, 72, 60);
             width: 100%;
-            height: 60px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -88,19 +88,37 @@
         .contact-header {
             margin-top: 60px;
             background-color: rgb(211, 219, 213);
-            padding: 50px 20px;
+            position: relative;
             text-align: center;
             color: rgb(86, 72, 60);
+            overflow: hidden;
+            padding: 120px 20px;
         }
 
         .contact-header h1 {
             font-size: 40px;
             margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
         }
 
         .contact-header p {
             font-size: 18px;
             margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-header img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: blur(1px);
+            opacity: 0.85;
         }
 
         .contact-sections {
@@ -211,6 +229,7 @@
         </nav>
     </header>
     <div class="contact-header">
+        <img src="contactimg.jpg" alt="Background Image">
         <h1>Contact Us</h1>
         <p>Suggestions? Questions? Contact us below</p>
     </div>

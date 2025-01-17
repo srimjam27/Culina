@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +20,16 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         * {
             box-sizing: border-box;
         }
+
         a {
             text-decoration: none;
             color: white;
         }
+
         header {
             background-color: rgba(86, 72, 60, 0.9);
             width: 100%;
@@ -41,21 +45,27 @@
             left: 0;
             z-index: 1000;
         }
+
         .heading {
             display: flex;
             flex-direction: column;
             line-height: 0.5;
         }
-        .heading h1, .heading h2 {
+
+        .heading h1,
+        .heading h2 {
             margin: 0;
         }
+
         .heading h1 {
             font-size: 36px;
         }
+
         .heading h2 {
             font-size: 16px;
             font-weight: normal;
         }
+
         nav ul {
             list-style: none;
             margin: 0;
@@ -63,6 +73,7 @@
             display: flex;
             gap: 20px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -71,12 +82,14 @@
             border-radius: 4px;
             transition: all 0.3s;
         }
+
         nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.4);
             color: black;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transform: scale(1.1);
         }
+
         .signup-container {
             flex: 1;
             display: flex;
@@ -84,6 +97,7 @@
             align-items: center;
             padding: 20px;
         }
+
         .signup-form {
             max-width: 400px;
             width: 100%;
@@ -92,14 +106,17 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .signup-form h2 {
             margin-bottom: 20px;
             text-align: center;
         }
+
         .signup-form label {
             display: block;
             margin-bottom: 5px;
         }
+
         .signup-form input {
             width: calc(100% - 20px);
             padding: 10px;
@@ -109,10 +126,12 @@
             outline: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .signup-form input:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.4);
         }
+
         .signup-form button {
             padding: 10px 20px;
             background-color: rgb(86, 72, 60);
@@ -122,18 +141,22 @@
             cursor: pointer;
             transition: all 0.3s;
         }
+
         .signup-form button:hover {
             background-color: rgb(100, 90, 80);
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.4);
         }
+
         .signup-form p {
             margin-top: 10px;
             text-align: center;
         }
+
         .signup-form a {
             color: #f0c040;
         }
+
         footer {
             background-color: rgba(86, 72, 60, 0.9);
             color: white;
@@ -142,6 +165,7 @@
             width: 100%;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         }
+
         footer ul {
             list-style: none;
             margin: 10px 0;
@@ -150,20 +174,24 @@
             justify-content: center;
             gap: 15px;
         }
+
         footer ul li a {
             color: white;
             font-size: 18px;
             transition: color 0.3s;
         }
+
         footer ul li a:hover {
             color: #f0c040;
         }
+
         footer p {
             margin: 5px 0 0;
             font-size: 14px;
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="heading">
@@ -202,7 +230,7 @@
         <p>&copy; 2025 Culina. All rights reserved.</p>
     </footer>
     <script>
-        document.getElementById('signUpForm').addEventListener('submit', function(event) {
+        document.getElementById('signUpForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent default form submission
 
             const email = document.getElementById('email').value;
@@ -217,4 +245,5 @@
         });
     </script>
 </body>
+
 </html>
