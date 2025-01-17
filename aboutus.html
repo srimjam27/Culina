@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Culina</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        header {
+            margin: 0;
+            background-color: rgb(86, 72, 60);
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .heading {
+            display: flex;
+            flex-direction: column;
+            line-height: 0.5;
+        }
+
+        .heading h1,
+        .heading h2 {
+            margin: 0;
+        }
+
+        .heading h1 {
+            font-size: 36px;
+        }
+
+        .heading h2 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+        }
+
+        .image-section {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .image-section img {
+            filter: blur(2px);
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            filter: blur(30%);
+        }
+
+        .image-section h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 55px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+        }
+
+        .text-box {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        .text-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+
+        .sections-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+            width: 60%;
+            margin: 0 auto;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+
+        .section {
+            width: 20%;
+        }
+
+        .section h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: rgb(86, 72, 60);
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            font-size: 14px;
+            color: rgb(60, 60, 60);
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: rgb(86, 72, 60);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="heading">
+            <h1>Culina</h1>
+            <h2>recipe sharing</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="javascript:void(0);" onclick="redirectToAddRecipe()"><i class="fas fa-utensils"></i> Add
+                        Recipes</a></li>
+                <li><a href="features.html"><i class="fa-solid fa-star"></i> Features</a></li>
+                <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="aboutus.html"><i class="fa-brands fa-rocketchat"></i> About Us</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="image-section">
+        <img src="aboutus.jpg" alt="About Us">
+        <h1>About Us</h1>
+    </div>
+
+    <div class="about-content">
+        <div class="text-box">
+            <p>
+                Culina is your ultimate culinary companion, combining technology with creativity to bring the best meal
+                planning, recipe sharing, and kitchen management solutions. Our platform is designed to enhance your
+                cooking experience with personalized meal suggestions and nutritional insights.
+            </p>
+        </div>
+        <div class="text-box">
+            <p>
+                Powered by AI, Culina helps you discover recipes, optimize grocery shopping, and track nutritional
+                information seamlessly. Whether you're a home cook or a culinary enthusiast, Culina offers everything
+                you need for a smarter, more efficient kitchen.
+            </p>
+        </div>
+    </div>
+
+    <div class="sections-container">
+        <div class="section">
+            <h3>Categories</h3>
+            <ul>
+                <li>Breakfast</li>
+                <li>Salads</li>
+                <li>Appetizers</li>
+                <li>Soups</li>
+                <li>Desserts</li>
+                <li>Main Dishes</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Useful Tags</h3>
+            <ul>
+                <li>Picknick</li>
+                <li>Steamed</li>
+                <li>Grill</li>
+                <li>Birthday</li>
+                <li>New Year</li>
+                <li>Christmas</li>
+                <li>Italian</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Favorite Recipes</h3>
+            <ul>
+                <li>Real Italian Pasta</li>
+                <li>Ham and Egg Summer Salad</li>
+                <li>Tasty Mozarella Buns</li>
+                <li>Real American Hamburger</li>
+                <li>Real Italian Lasagne from Oven</li>
+                <li>Huge XXL Burger</li>
+                <li>French Croissant Lunch</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Recently Added</h3>
+            <ul>
+                <li>60-minute Homemade Bread</li>
+                <li>Real Italian Pasta</li>
+                <li>Italian Mozarella and Tomato Salad</li>
+                <li>Chicken with French Fries</li>
+                <li>Banana with Chocolate Sauce</li>
+                <li>Walnut and Smoked Salmon Salad</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="blog.html">Blog</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <p>&copy; Culina Powered by KIIT</p>
+    </footer>
+
+    <script>
+        function redirectToAddRecipe() {
+            const user = sessionStorage.getItem('user');
+            if (user) {
+                window.location.href = "recipe.html";
+            } else {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+
+</html>
