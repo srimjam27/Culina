@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culina</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background: url("Saladss.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        header {
+            background-color: rgba(86, 72, 60, 0.9);
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .heading {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        .heading h1, .heading h2 {
+            margin: 0;
+        }
+        .heading h1 {
+            font-size: 36px;
+        }
+        .heading h2 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+        }
+        .login-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .login-form {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .login-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .login-form input:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.4);
+        }
+        .login-form button {
+            padding: 10px 20px;
+            background-color: rgb(86, 72, 60);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .login-form button:hover {
+            background-color: rgb(100, 90, 80);
+            transform: translateY(-5px); /* Hover up effect */
+        }
+        .login-form p {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .login-form a {
+            color: #f0c040;
+            transition: transform 0.3s ease;
+        }
+        .login-form a:hover {
+            transform: translateY(-5px); /* Hover up effect */
+        }
+        footer {
+            background-color: rgba(86, 72, 60, 0.9);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer ul {
+            list-style: none;
+            margin: 10px 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        footer ul li a {
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        footer ul li a:hover {
+            color: #f0c040;
+        }
+        footer p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h1>Culina</h1>
+            <h2>recipe sharing</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#recipes"><i class="fas fa-utensils"></i> Add Recipes</a></li>
+                <li><a href="#features"><i class="fa-solid fa-star"></i> Features</a></li>
+                <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="#about"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <h2>Login</h2>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="sign_up.html">Sign up here</a></p>
+        </form>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+        <p>&copy; 2025 Culina. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const storedEmail = sessionStorage.getItem('email');
+            const storedPassword = sessionStorage.getItem('password');
+            if (email === storedEmail && password === storedPassword) {
+                window.location.href = "recipe.html"; 
+            } else {
+                alert('Invalid email or password');
+            }
+        });
+    </script>
+</body>
+</html>

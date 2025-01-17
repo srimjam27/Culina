@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Culina</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      header {
+        margin: 0;
+        background-color: rgb(86, 72, 60);
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+      .heading {
+        display: flex;
+        flex-direction: column;
+        line-height: 0.4;
+      }
+      .heading h1,
+      .heading h2 {
+        margin: 0;
+      }
+      .heading h1 {
+        font-size: 36px;
+      }
+      .heading h2 {
+        font-size: 16px;
+        font-weight: normal;
+      }
+      nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        transition: all 0.3s;
+      }
+      nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        color: black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: scale(1.1);
+      }
+      .topbox {
+        position: relative;
+        height: 700px;
+        background-image: url(bg.jpg);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+      .topbox h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 70px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        line-height: 1.2;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        transform: translateX(20px);
+      }
+      .boxes-container {
+        margin-left: 150px;
+        position: absolute;
+        top: 70%;
+        display: flex;
+        gap: 0;
+        justify-content: center;
+        width: 100%;
+      }
+      .boxes {
+        width: 300px;
+        height: 300px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        transition: transform 0.5s ease;
+        position: relative;
+      }
+      .boxes:nth-child(2) {
+        z-index: 2;
+        transform: translateY(35px);
+        background-image: url(bowl.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .boxes:nth-child(1),
+      .boxes:nth-child(3) {
+        transform: translateY(50px);
+        z-index: 1;
+      }
+      .boxes:nth-child(1) {
+        background-image: url(Smoothie.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .boxes:nth-child(3) {
+        background-image: url(Sushi.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .boxtext {
+        font-size: 20px;
+        background-color: rgba(0, 128, 0, 0.781);
+        width: 160px;
+        text-align: center;
+        height: 30px;
+        color: rgba(255, 255, 255, 0.68);
+        border-radius: 5px;
+        position: relative;
+        left: 25%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        line-height: 30px;
+      }
+      .boxes a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+      }
+      .boxes:hover {
+        width: 302px;
+        height: 302px;
+        background-color: rgba(255, 255, 255, 0.916);
+      }
+      .smallbutton {
+        z-index: 2;
+        transform: translateY(330px);
+        width: 100px;
+        height: 20px;
+        background-color: green;
+        border-radius: 5px;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+      }
+      .smallbutton:hover {
+        width: 102px;
+        height: 22px;
+      }
+
+      .topbox .boxes {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+      .topbox .boxes::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        transition: background 0.3s ease;
+      }
+      .topbox .boxes:hover::after {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .topbox .boxes:hover {
+        transform: scale(1);
+      }
+
+      .blank {
+        background-color: rgb(227, 227, 222);
+        position: relative;
+        height: 180px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+      .addrecipe {
+        padding: 20px;
+        background-size: cover;
+        background-position: center;
+        color: green;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+      }
+      .addrecipe h2 {
+        padding-top: 20px;
+        text-align: center;
+        font-size: 30px;
+      }
+      .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 30px 0;
+      }
+      .recipe-box {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .recipe-grid .recipe-tile {
+        height: 250px;
+        background-color: rgba(218, 216, 216, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: #555;
+      }
+      .recipe-grid .recipe-tile.add-button {
+        background-color: rgba(34, 139, 34, 0.9);
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .recipe-grid .recipe-tile.add-button:hover {
+        transform: scale(1.05);
+      }
+      .recipe-grid .recipe-tile.add-button a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .recipe-tile:nth-child(1) {
+        background-image: url(Breakfast.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .recipe-tile:nth-child(2) {
+        background-image: url(Appetizers.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .recipe-tile:nth-child(3) {
+        background-image: url(Deserts.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .recipe-tile:nth-child(4) {
+        background-image: url(Salads.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .recipe-tile:nth-child(5) {
+        background-image: url(Soups.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .features {
+        background-color: green;
+        color: white;
+      }
+      h2 {
+        padding-top: 20px;
+        text-align: center;
+        font-size: 35px;
+      }
+      .contain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 30px 0;
+      }
+      .bigbox {
+        width: 400px;
+        height: 400px;
+        background-color: rgba(211, 219, 213, 0.658);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        color: white;
+        border-radius: 3px;
+      }
+      .smallbox {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .smaller {
+        width: 300px;
+        height: 196px;
+        background-color: rgba(211, 219, 213, 0.658);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: white;
+        border-radius: 3px;
+      }
+      footer {
+        background-color: rgb(86, 72, 60);
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+      footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1>Culina</h1>
+        <h2>recipe sharing</h2>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="recipe.html"
+              ><i class="fas fa-utensils"></i> Add Recipes</a
+            >
+          </li>
+          <li>
+            <a href="#features"><i class="fa-solid fa-star"></i> Features</a>
+          </li>
+          <li>
+            <a href="your_recipe.html"><i class="fas fa-blog"></i> Your Recipe</a>
+          </li>
+          <li>
+            <a href="#about.html"
+              ><i class="fa-brands fa-rocketchat"></i> About Us</a
+            >
+          </li>
+          <li>
+            <a href="login.html"
+              ><i class="fa-solid fa-right-to-bracket"></i> Sign in</a
+            >
+          </li>
+          <li>
+            <a href="contact.html"
+              ><i class="fas fa-envelope"></i> Contact Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="topbox">
+      <div class="boxes-container">
+        <div class="boxes 1">
+          <div class="boxtext"><p>Featured Recipe!</p></div>
+          <a href="page1.html"></a>
+        </div>
+        <div class="boxes 2">
+          <div class="boxtext"><p>Featured Recipe!</p></div>
+          <a href="page2.html"></a>
+        </div>
+        <div class="boxes 3">
+          <div class="boxtext"><p>Featured Recipe!</p></div>
+          <a href="page3.html"></a>
+        </div>
+        <div class="smallbutton"><a href="#">See more >></a></div>
+      </div>
+    </div>
+    <div class="blank"></div>
+
+    <div class="addrecipe">
+      <h2>Add Your Recipes</h2>
+      <div class="recipe-box">
+        <div class="recipe-grid">
+          <div class="recipe-tile"></div>
+          <div class="recipe-tile"></div>
+          <div class="recipe-tile"></div>
+          <div class="recipe-tile"></div>
+          <div class="recipe-tile"></div>
+          <div class="recipe-tile add-button">
+            <a href="recipe.html">Add your Recipe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="features">
+      <h2>Other Features</h2>
+      <div class="contain">
+        <div class="bigbox">Big Feature</div>
+        <div class="smallbox">
+          <div class="smaller">Small Feature 1</div>
+          <div class="smaller">Small Feature 2</div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#blog">Blog</a>
+      <p>&copy; 2025 Company, IN</p>
+    </footer>
+
+    <script>
+      function redirectToAddRecipe() {
+        const user = sessionStorage.getItem("user");
+        if (user) {
+          window.location.href = "recipe.html";
+        } else {
+          window.location.href = "login.html";
+        }
+      }
+    </script>
+  </body>
+</html>
