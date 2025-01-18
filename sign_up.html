@@ -203,7 +203,7 @@
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="recipes.html"><i class="fas fa-utensils"></i> Add Recipes</a></li>
                 <li><a href="features.html"><i class="fa-solid fa-star"></i> Features</a></li>
-                <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="your_recipe.html"><i class="fas fa-blog"></i> Blog</a></li>
                 <li><a href="aboutus.html"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a></li>
                 <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
             </ul>
@@ -231,17 +231,16 @@
     </footer>
     <script>
         document.getElementById('signUpForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); 
 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Store email and password in sessionStorage
             sessionStorage.setItem('email', email);
             sessionStorage.setItem('password', password);
 
             alert('Account created successfully!');
-            window.location.href = 'login.html'; // Redirect to login page
+            window.location.href = 'login.html'; 
         });
     </script>
 </body>

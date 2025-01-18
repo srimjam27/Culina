@@ -1,281 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Culina</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      a {
-        text-decoration: none;
-        color: white;
-      }
-      header {
-        margin: 0;
-        background-color: rgb(86, 72, 60);
-        width: 100%;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        color: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-      }
-      .heading {
-        display: flex;
-        flex-direction: column;
-        line-height: 1;
-      }
-      .heading h1,
-      .heading h2 {
-        margin: 0;
-      }
-      .heading h1 {
-        font-size: 36px;
-      }
-      .heading h2 {
-        font-size: 16px;
-        font-weight: normal;
-      }
-      nav {
-        flex-grow: 1;
-        display: flex;
-        justify-content: center;
-      }
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 20px;
-      }
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        padding: 5px 10px;
-        border-radius: 4px;
-        transition: all 0.3s;
-      }
-      nav ul li a:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-        color: black;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transform: scale(1.1);
-      }
-      .recipe-container {
-        margin-top: 80px;
-        padding: 20px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        flex-grow: 1;
-      }
-      .recipeForm label {
-        margin-top: 10px;
-        font-weight: bold;
-      }
-      .recipeForm input,
-      .recipeForm textarea {
-        margin-top: 5px;
-        padding: 10px;
-        width: 100%;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-      }
-      .recipeForm button {
-        margin-top: 15px;
-        padding: 10px;
-        background-color: rgb(86, 72, 60);
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      .recipeForm button:hover {
-        background-color: rgb(70, 58, 48);
-      }
-      .ingredient-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
-      }
-      .ingredient-item input {
-        flex-grow: 1;
-      }
-      .ingredient-item button {
-        margin-left: 5px;
-        padding: 5px;
-        background-color: rgb(86, 72, 60);
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      footer {
-        background-color: rgb(86, 72, 60);
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="heading">
-        <h1>Culina</h1>
-        <h2>recipe sharing</h2>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-          </li>
-          <li>
-            <a href="recipe.html"
-              ><i class="fas fa-utensils"></i> Add Recipes</a
-            >
-          </li>
-          <li>
-            <a href="#favorites"><i class="fa-solid fa-star"></i> Features</a>
-          </li>
-          <li>
-            <a href="your_recipe.html"
-              ><i class="fas fa-blog"></i>Your Recipe</a
-            >
-          </li>
-          <li>
-            <a href="#about"
-              ><i class="fa-brands fa-rocketchat"></i> About Us</a
-            >
-          </li>
-          <li>
-            <a href="login.html"
-              ><i class="fa-solid fa-right-to-bracket"></i> Sign in</a
-            >
-          </li>
-          <li>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
 
-    <div class="recipe-container">
-      <h2>Add Your Recipe</h2>
-      <form class="recipeForm" id="recipeForm">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Culina</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        <label for="description">Description:</label>
-        <textarea
-          id="description"
-          name="description"
-          rows="4"
-          required
-        ></textarea>
+    * {
+      box-sizing: border-box;
+    }
 
-        <label for="imageLink">Image Link (Optional):</label>
-        <input type="url" id="imageLink" name="imageLink" />
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
-        <label for="cookingTime">Cooking Time (in minutes):</label>
-        <input
-          type="number"
-          id="cookingTime"
-          name="cookingTime"
-          min="1"
-          required
-        />
+    header {
+      margin: 0;
+      background-color: rgb(86, 72, 60);
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
 
-        <label>Ingredients:</label>
-        <div id="ingredientsList"></div>
-        <button type="button" onclick="addIngredient()">Add Ingredient</button>
+    .heading {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
 
-        <button type="submit">Add Recipe</button>
-      </form>
-      <p><a href="index.html">Back to Home</a></p>
+    .heading h1,
+    .heading h2 {
+      margin: 0;
+    }
+
+    .heading h1 {
+      font-size: 36px;
+    }
+
+    .heading h2 {
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      color: black;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: scale(1.1);
+    }
+
+    .recipe-container {
+      margin-top: 80px;
+      padding: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      flex-grow: 1;
+    }
+
+    .recipeForm label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .recipeForm input,
+    .recipeForm textarea {
+      margin-top: 5px;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .recipeForm button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: rgb(86, 72, 60);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .recipeForm button:hover {
+      background-color: rgb(70, 58, 48);
+    }
+
+    .ingredient-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .ingredient-item input {
+      flex-grow: 1;
+    }
+
+    .ingredient-item button {
+      margin-left: 5px;
+      padding: 5px;
+      background-color: rgb(86, 72, 60);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: rgb(86, 72, 60);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="heading">
+      <h1>Culina</h1>
+      <h2>recipe sharing</h2>
     </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a href="recipe.html"><i class="fas fa-utensils"></i> Add Recipes</a>
+        </li>
+        <li>
+          <a href="features.html"><i class="fa-solid fa-star"></i> Features</a>
+        </li>
+        <li>
+          <a href="your_recipe.html"><i class="fas fa-blog"></i>Your Recipe</a>
+        </li>
+        <li>
+          <a href="aboutus.html"><i class="fa-brands fa-rocketchat"></i> About Us</a>
+        </li>
+        <li>
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a>
+        </li>
+        <li>
+          <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-      <p>&copy; 2025 Culina. All rights reserved. | Recipe Sharing Platform</p>
-    </footer>
+  <div class="recipe-container">
+    <h2>Add Your Recipe</h2>
+    <form class="recipeForm" id="recipeForm">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
 
-    <script>
-      const storedEmail = sessionStorage.getItem("email");
-      const storedPassword = sessionStorage.getItem("password");
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
 
-      if (!storedEmail || !storedPassword) {
-        window.location.href = "login.html";
-      }
+      <label for="imageLink">Image Link (Optional):</label>
+      <input type="url" id="imageLink" name="imageLink" />
 
-      let ingredientCount = 0;
-      function addIngredient() {
-        const ingredientsList = document.getElementById("ingredientsList");
-        const ingredientDiv = document.createElement("div");
-        ingredientDiv.className = "ingredient-item";
-        ingredientDiv.innerHTML = `<input type="text" placeholder="Ingredient ${++ingredientCount}" required>
+      <label for="cookingTime">Cooking Time (in minutes):</label>
+      <input type="number" id="cookingTime" name="cookingTime" min="1" required />
+
+      <label>Ingredients:</label>
+      <div id="ingredientsList"></div>
+      <button type="button" onclick="addIngredient()">Add Ingredient</button>
+
+      <button type="submit">Add Recipe</button>
+    </form>
+    <p><a href="index.html">Back to Home</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Culina. All rights reserved. | Recipe Sharing Platform</p>
+  </footer>
+
+  <script>
+    const storedEmail = sessionStorage.getItem("email");
+    const storedPassword = sessionStorage.getItem("password");
+
+    if (!storedEmail || !storedPassword) {
+      window.location.href = "login.html";
+    }
+
+    let ingredientCount = 0;
+    function addIngredient() {
+      const ingredientsList = document.getElementById("ingredientsList");
+      const ingredientDiv = document.createElement("div");
+      ingredientDiv.className = "ingredient-item";
+      ingredientDiv.innerHTML = `<input type="text" placeholder="Ingredient ${++ingredientCount}" required>
                 <button type="button" onclick="this.parentElement.remove()">Remove</button>`;
-        ingredientsList.appendChild(ingredientDiv);
-      }
+      ingredientsList.appendChild(ingredientDiv);
+    }
 
-      document
-        .getElementById("recipeForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
+    document
+      .getElementById("recipeForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
 
-          const title = document.getElementById("title").value;
-          const description = document.getElementById("description").value;
-          const imageLink = document.getElementById("imageLink").value;
-          const cookingTime = document.getElementById("cookingTime").value;
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const imageLink = document.getElementById("imageLink").value;
+        const cookingTime = document.getElementById("cookingTime").value;
 
-          const ingredientInputs = document.querySelectorAll(
-            "#ingredientsList input"
-          );
-          const ingredients = Array.from(ingredientInputs).map(
-            (input) => input.value
-          );
+        const ingredientInputs = document.querySelectorAll(
+          "#ingredientsList input"
+        );
+        const ingredients = Array.from(ingredientInputs).map(
+          (input) => input.value
+        );
 
-          const recipeData = {
-            title,
-            description,
-            imageLink,
-            cookingTime,
-            ingredients,
-          };
+        const recipeData = {
+          title,
+          description,
+          imageLink,
+          cookingTime,
+          ingredients,
+        };
 
-          let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
-          recipes.push(recipeData);
-          localStorage.setItem("recipes", JSON.stringify(recipes));
+        let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+        recipes.push(recipeData);
+        localStorage.setItem("recipes", JSON.stringify(recipes));
 
-          alert("Recipe added successfully!");
-          window.location.href = "your_recipe.html";
-        });
-    </script>
-  </body>
+        alert("Recipe added successfully!");
+        window.location.href = "your_recipe.html";
+      });
+  </script>
+</body>
+
 </html>
